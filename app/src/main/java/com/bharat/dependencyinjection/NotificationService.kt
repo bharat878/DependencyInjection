@@ -1,7 +1,5 @@
 package com.bharat.dependencyinjection
 
-import android.content.ContentValues.TAG
-import android.nfc.Tag
 import android.util.Log
 import javax.inject.Inject
 
@@ -13,9 +11,9 @@ interface NotificationService {
         }
     }
 
-    class MessageService : NotificationService {
+    class MessageService (private val retryCount: Int) : NotificationService {
         override fun send(to: String, from: String, body: String) {
-            Log.d("DaggerTest", "Message Sent")
+            Log.d("DaggerTest", "Message Sent- retry count $retryCount ")
 
         }
     }

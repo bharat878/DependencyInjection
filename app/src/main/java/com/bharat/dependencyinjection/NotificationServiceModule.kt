@@ -9,8 +9,8 @@ class NotificationServiceModule {
 
    @MessageQualifier
     @Provides
-    fun getMessageService(): NotificationService {
-        return NotificationService.MessageService()
+    fun getMessageService(retryCount: Int): NotificationService {
+        return NotificationService.MessageService(retryCount)
     }
 
     @Named("email")
