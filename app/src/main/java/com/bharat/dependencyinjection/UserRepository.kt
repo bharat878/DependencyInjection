@@ -11,7 +11,7 @@ interface UserRepository {
     }
 
 
-    @Singleton
+    @ApplicationScope
     class SQLRepository @Inject constructor(): UserRepository {
         override fun saveUser(email: String, password: String) {
             Log.d("DaggerTest", "Saved user in SQL")
